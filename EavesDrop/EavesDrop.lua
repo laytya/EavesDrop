@@ -1,8 +1,8 @@
 ﻿--[[
   ****************************************************************
-	EavesDrop 1.3
+	EavesDrop 1.4
 
-	Author: Grayhoof. Original idea by Bant. Coding help/samples
+	Author: laytya. Original idea by Bant,Grayhoof. Coding help/samples
 					from Andalia`s SideCombatLog and CombatChat.
 					
 	Notes: Code comments coming at a later time.
@@ -11,6 +11,7 @@
 EavesDrop = AceLibrary("AceAddon-2.0"):new("AceEvent-2.0", "AceDB-2.0", "AceConsole-2.0", "Metrognome-2.0")
 
 local parser = ParserLib:GetInstance("1.1")
+local waterfall = AceLibrary("Waterfall-1.0")
 local BS = AceLibrary("Babble-Spell-2.2")
 local dewdrop = AceLibrary("Dewdrop-2.0")
 local L = AceLibrary("AceLocale-2.2"):new("EavesDrop")
@@ -93,6 +94,8 @@ function EavesDrop:OnInitialize()
 	self:RegisterChatCommand({"/EavesDrop"}, self.options)
 	
 	self:PerformDisplayOptions();
+	
+	waterfall:Register('EavesDrop', 'aceOptions', EavesDrop.options, 'title','EavesDrop Options')  
 end
 
 function EavesDrop:OnEnable()
@@ -774,14 +777,18 @@ function EavesDrop:SpellColor(option, type)
 	end
 end
 
-local function DewDropMenu()
+local function DewDropOptions()
   dewdrop:AddLine('text', 'EavesDrop Options','isTitle', true);
 	dewdrop:InjectAceOptionsTable(EavesDrop, EavesDrop.options)
 	dewdrop:FeedAceOptionsTable(EavesDrop.options);
 end
 
 function EavesDrop:DropMenu()    
-  dewdrop:Open(EavesDropFrame, 'children', DewDropMenu, 'cursorX', true, 'cursorY', true)
+	waterfall:Open('EavesDrop')
+end
+
+function EavesDrop:DewDropMenu() 
+	dewdrop:Open(EavesDropFrame, 'children', DewDropOptions, 'cursorX', true, 'cursorY', true)
 end
 
 -------------------------

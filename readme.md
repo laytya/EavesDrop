@@ -36,6 +36,7 @@ How do I change the fonts? - EavesDrop uses the games default fonts. You will ne
 
 
 ##Version History
+1.4 - Added Waterfall options - Shift-RightClick
 
 1.3 - Added new high value skill stat tracking (incoming/outgoing damage/heals per character). New highs flagged with !'s. Open full history with icon near main tab. Added pet portrait to texture for pet events. Fixed overhealing issue. Changed table update methods. Removed Compost.
 
