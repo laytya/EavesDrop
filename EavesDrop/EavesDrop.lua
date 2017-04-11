@@ -1,6 +1,6 @@
 ﻿--[[
   ****************************************************************
-	EavesDrop 1.4
+	EavesDrop 1.4.1
 
 	Author: laytya. Original idea by Bant,Grayhoof. Coding help/samples
 					from Andalia`s SideCombatLog and CombatChat.
@@ -778,7 +778,7 @@ function EavesDrop:SpellColor(option, type)
 end
 
 local function DewDropOptions()
-  dewdrop:AddLine('text', 'EavesDrop Options','isTitle', true);
+  dewdrop:AddLine('text', L['EavesDrop Options'],'isTitle', true);
 	dewdrop:InjectAceOptionsTable(EavesDrop, EavesDrop.options)
 	dewdrop:FeedAceOptionsTable(EavesDrop.options);
 end

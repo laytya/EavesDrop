@@ -1,8 +1,8 @@
 local L = AceLibrary("AceLocale-2.2"):new("EavesDrop")
 
-L:RegisterTranslations("koKR", function()
-    return {
+L:RegisterTranslations("koKR", function() return {
     		--main
+	["EavesDrop Options"] = "EavesDrop Options",
         ["DownTip"] = "마우스를 아래로 스크롤. Shift+아래로 스크롤하면 맨아래로",
         ["UpTip"] = "마우스를 위로 스크롤. Shift+위로 스크롤하면 맨위로",
         ["TabTip"] = "왼쪽 클릭하면 이동할 수 있습니다. 오른쪽 클릭하면 옵션을 볼 수 있습니다.",
@@ -117,6 +117,4 @@ L:RegisterTranslations("koKR", function()
         ["MLockD"] = "프레임 위치 고정",
         ["MReset"] = "설정 초기화",
         ["MResetD"] = "모든 설정을 초기화 합니다.",
-        
-    }
-end)
+} end)
